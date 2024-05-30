@@ -12,32 +12,33 @@ requiredEnvVars.forEach((varName) => {
 });
 
 const app = express();
-//app.use(express.json());
+app.use(express.json());
  
-app.get('/', (req, res) => {
-  res.send('Hello this is App 1, Enjoy ur day');
-});
-
-const port = process.env.PORT || 8080;
-
-sequelize.authenticate()
-  .then(() => {
-    console.log('Database connection has been established successfully.');
-    return sequelize.sync(); // Ensure models are synchronized
-  })
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`Server running on port ${port}`);
-    });
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
+app.use('/api/auth', require('./routes/auth'));
+// app.get('/', (req, res) => {
+//   res.send('Hello this is App 1, Enjoy ur day');
+// });
 
 // const port = process.env.PORT || 8080;
-// app.listen(port, () => {
-//   console.log(`App1 listening on port ${port}`);
-// });
+
+// sequelize.authenticate()
+//   .then(() => {
+//     console.log('Database connection has been established successfully.');
+//     return sequelize.sync(); // Ensure models are synchronized
+//   })
+//   .then(() => {
+//     app.listen(port, () => {
+//       console.log(`Server running on port ${port}`);
+//     });
+//   })
+//   .catch((err) => {
+//     console.error('Unable to connect to the database:', err);
+//   });
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`App1 listening on port ${port}`);
+});
 
 //revisi 1
 
