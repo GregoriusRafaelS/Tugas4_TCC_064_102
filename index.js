@@ -18,14 +18,16 @@ app.get('/', (req, res) => {
   res.send('Hello this is App 1, Enjoy ur day');
 });
 
+const port = process.env.PORT || 8080;
+
 sequelize.authenticate()
   .then(() => {
     console.log('Database connection has been established successfully.');
     return sequelize.sync(); // Ensure models are synchronized
   })
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
     });
   })
   .catch((err) => {
