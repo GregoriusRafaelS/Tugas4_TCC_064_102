@@ -1,4 +1,16 @@
 const express = require('express');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const requiredEnvVars = ['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'PORT', 'JWT_SECRET'];
+requiredEnvVars.forEach((varName) => {
+  if (!process.env[varName]) {
+    console.error(`Error: Missing required environment variable ${varName}`);
+    process.exit(1); // Exit if any required environment variable is missing
+  }
+});
+
 const app = express();
 
 app.get('/', (req, res) => {
@@ -57,19 +69,19 @@ app.listen(port, () => {
 
 // const PORT = process.env.PORT || 8080;
 
-// // sequelize.authenticate()
-// //   .then(() => {
-// //     console.log('Database connection has been established successfully.');
-// //     return sequelize.sync(); // Ensure models are synchronized
-// //   })
-// //   .then(() => {
-// //     app.listen(PORT, () => {
-// //       console.log(`Server running on port ${PORT}`);
-// //     });
-// //   })
-// //   .catch((err) => {
-// //     console.error('Unable to connect to the database:', err);
-// //   });
+// sequelize.authenticate()
+//   .then(() => {
+//     console.log('Database connection has been established successfully.');
+//     return sequelize.sync(); // Ensure models are synchronized
+//   })
+//   .then(() => {
+//     app.listen(PORT, () => {
+//       console.log(`Server running on port ${PORT}`);
+//     });
+//   })
+//   .catch((err) => {
+//     console.error('Unable to connect to the database:', err);
+//   });
 // app.listen(PORT, () => {
 //       console.log(`Server running on port ${PORT}`);
 //     });
