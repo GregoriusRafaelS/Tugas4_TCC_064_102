@@ -20,6 +20,21 @@ app.use('/api/auth', require('./routes/auth'));
 // });
 
 // const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
+db.connect();
+
+// Mengecek koneksi ke basis data sebelum memulai server
+db.connection.on('connect', () => {
+  console.log('Connected to database successfully!');
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});
+
+// Menangani kesalahan koneksi ke basis data
+db.connection.on('error', (err) => {
+  console.error('Error connecting to database:', err);
+});
 
 // sequelize.authenticate()
 //   .then(() => {
@@ -35,10 +50,10 @@ app.use('/api/auth', require('./routes/auth'));
 //     console.error('Unable to connect to the database:', err);
 //   });
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`App1 listening on port ${port}`);
-});
+// const port = process.env.PORT || 8080;
+// app.listen(port, () => {
+//   console.log(`App1 listening on port ${port}`);
+// });
 
 //revisi 1
 
