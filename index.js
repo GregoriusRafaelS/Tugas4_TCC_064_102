@@ -57,16 +57,19 @@ app.use('/api/auth', require('./routes/auth')); // Ensure this path is correct a
 
 const PORT = process.env.PORT || 8080;
 
-sequelize.authenticate()
-  .then(() => {
-    console.log('Database connection has been established successfully.');
-    return sequelize.sync(); // Ensure models are synchronized
-  })
-  .then(() => {
-    app.listen(PORT, () => {
+// sequelize.authenticate()
+//   .then(() => {
+//     console.log('Database connection has been established successfully.');
+//     return sequelize.sync(); // Ensure models are synchronized
+//   })
+//   .then(() => {
+//     app.listen(PORT, () => {
+//       console.log(`Server running on port ${PORT}`);
+//     });
+//   })
+//   .catch((err) => {
+//     console.error('Unable to connect to the database:', err);
+//   });
+app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
