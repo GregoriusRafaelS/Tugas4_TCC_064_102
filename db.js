@@ -31,17 +31,17 @@ connection.connect((err) => {
 module.exports = connection;
 
 // Membuat koneksi
-function connect() {
-  connection.connect();
-}
+// function connect() {
+//   connection.connect();
+// }
 
-// Menutup koneksi setelah selesai
-function disconnect() {
-  connection.end();
-}
+// // Menutup koneksi setelah selesai
+// function disconnect() {
+//   connection.end();
+// }
 
-module.exports = {
-  connection,
-  connect,
-  disconnect
-};
+// module.exports = {
+//   connection,
+//   connect,
+//   disconnect
+// };

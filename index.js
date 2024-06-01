@@ -12,10 +12,10 @@ requiredEnvVars.forEach((varName) => {
   }
 });
 
-const app = express();
-app.use(bodyParser.json());
+// const app = express();
+// app.use(bodyParser.json());
  
-app.use('/api/auth', require('./routes/auth'));
+// app.use('/api/auth', require('./routes/auth'));
 // app.get('/', (req, res) => {
 //   res.send('Hello this is App 1, Enjoy ur day');
 // });
@@ -51,7 +51,7 @@ app.use('/api/auth', require('./routes/auth'));
 //     console.error('Unable to connect to the database:', err);
 //   });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`App1 listening on port ${port}`);
 });
