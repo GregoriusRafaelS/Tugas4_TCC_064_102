@@ -8,8 +8,8 @@ steps:
       'run', 'deploy', 'app1',
       '--image', 'gcr.io/$PROJECT_ID/app1:$SHORT_SHA', 
       '--region', 'us-central1', '--platform', 'managed', 
-      '--allow-unauthenticated', '--add-cloudsql-instances', 'project-tcc-rian:us-central1:projectakhir', 
-      '--set-env-vars', 'DB_HOST=/cloudsql/project-tcc-rian:us-central1:projectakhir,DB_USER=rian,DB_PASSWORD=12345678,DB_NAME=tcc,JWT_SECRET=4f3c2e68a331b5e5a7fce8c4d7a5f1d6b2a2e7f4e7b4a6e3d5f7a8b6c4f8e3d5', 
+      '--allow-unauthenticated', '--add-cloudsql-instances', 'project-tcc-rian:us-central1:tccproject', 
+      '--set-env-vars', 'DB_HOST=/cloudsql/project-tcc-rian:us-central1:tccproject,DB_USER=tcc,DB_PASSWORD=tccprojectmantap,DB_NAME=tcc,JWT_SECRET=4f3c2e68a331b5e5a7fce8c4d7a5f1d6b2a2e7f4e7b4a6e3d5f7a8b6c4f8e3d5', 
       '--cpu', '1'
     ]
 
