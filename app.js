@@ -20,18 +20,7 @@
 // });
 
 // //api register
-// app.post('/register', (req, res) => {
-//     const { name, email, password } = req.body;
-//     const query = 'INSERT INTO users (name, email,password) VALUES (?, ?,?)';
-//     connection.query(query, [name, email,password], (err, results) => {
-//       if (err) {
-//         console.error('Error inserting user:', err.stack);
-//         res.status(500).send('Error inserting user');
-//         return;
-//       }
-//       res.status(201).send('user added successfully');
-//     });
-//   });
+
 
 // app.listen(port, () => {
 //   console.log(`Server is running on port ${port}`);
@@ -58,6 +47,19 @@ app.get('/login', (req, res) => {
     }
   });
 });
+
+app.post('/register', (req, res) => {
+    const { name, email, password } = req.body;
+    const query = 'INSERT INTO users (name, email,password) VALUES (?, ?,?)';
+    connection.query(query, [name, email,password], (err, results) => {
+      if (err) {
+        console.error('Error inserting user:', err.stack);
+        res.status(500).send('Error inserting user');
+        return;
+      }
+      res.status(201).send('user added successfully');
+    });
+  });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
