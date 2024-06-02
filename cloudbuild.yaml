@@ -4,7 +4,12 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/app2:$SHORT_SHA']
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'app2', '--image', 'gcr.io/$PROJECT_ID/app2:$SHORT_SHA', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated', '--cpu', '1']
+    args: ['run', 'deploy', 'app2', 
+    '--image', 'gcr.io/$PROJECT_ID/app2:$SHORT_SHA', 
+    '--region', 'us-central1', '--platform', 'managed', 
+    '--allow-unauthenticated', '--add-cloudsql-instances', 'project-tcc-rian:us-central1:tccproject', 
+    '--set-env-vars', 'DB_HOST=/cloudsql/project-tcc-rian:us-central1:tccproject,DB_USER=tcc,DB_PASSWORD=tccprojectmantap,DB_NAME=tcc,JWT_SECRET=4f3c2e68a331b5e5a7fce8c4d7a5f1d6b2a2e7f4e7b4a6e3d5f7a8b6c4f8e3d5', 
+    '--cpu', '1']
 
 images:
   - 'gcr.io/$PROJECT_ID/app2:$SHORT_SHA'
