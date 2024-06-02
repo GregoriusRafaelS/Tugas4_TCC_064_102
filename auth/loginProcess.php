@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
+    // $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -16,14 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Memeriksa kredensial pengguna
     $authenticated = false;
     foreach ($users as $user) {
-        if ($user['username'] === $username && $user['password'] === $password) {
+        if ($user['email'] === $email && $user['password'] === $password) {
             $authenticated = true;
             break;
         }
     }
 
     if ($authenticated) {
-        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
         header("Location: dashboard.php");
         
         exit();
