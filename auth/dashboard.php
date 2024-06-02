@@ -31,6 +31,17 @@
                     $keluar = 0;
                     // Tampilkan data ke dalam tabel
                     foreach ($data as $row) {
+                        ?>
+                        <tr
+                        <?php
+                        if ($row['type'] == "in") {
+                            echo " class='table-success'";
+                        } else {
+                            echo " class='table-danger'";
+                        }
+                        ?>
+                         >
+                        <?php
                         echo "<tr>";
                         echo "<td>" . $row['tanggal'] . "</td>";
                         echo "<td>" . $row['name'] . "</td>";
@@ -42,7 +53,7 @@
                         $keluar = $row['keluar'];
                     }
                     $saldo = intval($masuk) - intval($keluar);
-                    echo "<tr>";
+                    echo "<tr class='table-light'>";
                     echo "<td colspan=3>Total Saldo</td>";
                     echo "<td colspan=2>" . $saldo . "</td>";
                     echo "</tr>";
