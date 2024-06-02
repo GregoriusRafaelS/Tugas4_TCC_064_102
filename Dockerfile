@@ -12,7 +12,7 @@ COPY style.css .
 COPY process/ /var/www/html/process/
 
 # Menetapkan port yang akan digunakan oleh server Apache (biasanya port 80)
-EXPOSE 6000
+EXPOSE 80
 
 # Perintah untuk menjalankan server Apache saat container dijalankan
 CMD ["apache2-foreground"]
