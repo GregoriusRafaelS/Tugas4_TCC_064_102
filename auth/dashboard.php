@@ -18,6 +18,7 @@
                   <th scope="col">Nama</th>
                   <th scope="col">Value</th>
                   <th scope="col">Type</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -35,6 +36,7 @@
                         echo "<td>" . $row['name'] . "</td>";
                         echo "<td>" . $row['value'] . "</td>";
                         echo "<td>" . $row['type'] . "</td>";
+                        echo "<td><a href='hapus.php?id=" . $row['id'] . "'><button type='button' class='btn btn-danger'>Hapus</button></a></td>";
                         echo "</tr>";
                         $masuk = $row['masuk'];
                         $keluar = $row['keluar'];
@@ -42,7 +44,7 @@
                     $saldo = intval($masuk) - intval($keluar);
                     echo "<tr>";
                     echo "<td colspan=3>Total Saldo</td>";
-                    echo "<td>" . $saldo . "</td>";
+                    echo "<td colspan=2>" . $saldo . "</td>";
                     echo "</tr>";
 
                 ?>
