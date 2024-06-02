@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 });
 
 // Menangani semua permintaan PHP di dalam folder 'auth'
-app.use('/auth', expressPhp.cgi(path.join(__dirname, 'auth')));
+app.use('/process', expressPhp.cgi(path.join(__dirname, 'process')));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
