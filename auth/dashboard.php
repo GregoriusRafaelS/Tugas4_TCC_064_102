@@ -42,7 +42,6 @@
                         ?>
                          >
                         <?php
-                        echo "<tr>";
                         echo "<td>" . $row['tanggal'] . "</td>";
                         echo "<td>" . $row['name'] . "</td>";
                         echo "<td>" . $row['value'] . "</td>";
