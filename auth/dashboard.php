@@ -10,6 +10,7 @@
 <body>
     <div class="container-sm">
         <h1 class="text-center mt-3 mb-3">Catatan Keuangan</h1>
+        <a href="tambahCatatan.php"><button type="button" class="btn btn-success">Tambah Catatan</button></a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -39,7 +40,7 @@
                         $keluar = $row['keluar'];
                     }
                     $saldo = intval($masuk) - intval($keluar);
-                    echo "<tr class=table-light>";
+                    echo "<tr>";
                     echo "<td colspan=3>Total Saldo</td>";
                     echo "<td>" . $saldo . "</td>";
                     echo "</tr>";
