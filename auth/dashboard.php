@@ -25,7 +25,8 @@
                     $url = "https://app2-z4pp7wkg3a-uc.a.run.app/data";
                     $json = file_get_contents($url);
                     $data = json_decode($json, true);
-
+                    $masuk = 0;
+                    $keluar = 0;
                     // Tampilkan data ke dalam tabel
                     foreach ($data as $row) {
                         echo "<tr>";
@@ -34,8 +35,10 @@
                         echo "<td>" . $row['value'] . "</td>";
                         echo "<td>" . $row['type'] . "</td>";
                         echo "</tr>";
+                        $masuk = $row['masuk'];
+                        $keluar = $row['keluar'];
                     }
-                    $saldo = $data['masuk'] - $data['keluar'];
+                    $saldo = intval($masuk) - intval($keluar);
                     echo "<tr>";
                     echo "<td colspan=3>Total Saldo</td>";
                     echo "<td>" . $saldo . "</td>";
