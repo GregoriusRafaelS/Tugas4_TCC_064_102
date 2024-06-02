@@ -39,7 +39,7 @@
                         $keluar = $row['keluar'];
                     }
                     $saldo = intval($masuk) - intval($keluar);
-                    echo "<tr>";
+                    echo "<tr class=table-light>";
                     echo "<td colspan=3>Total Saldo</td>";
                     echo "<td>" . $saldo . "</td>";
                     echo "</tr>";
