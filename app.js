@@ -1,6 +1,6 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const connection = require('./db');
+const path = require('path');
+const expressPhp = require('express-php');
 
 const app = express();
 const port = process.env.PORT || 8080;
