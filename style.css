@@ -1,0 +1,9 @@
+.login-container{
+    width: 25%;
+    height: 65%;
+    background: linear-gradient(to bottom right, #5AB2FF, #CAF4FF);
+    padding: 20px 10px;
+    min-width: 55vh;
+    min-height: 65vh;
+    justify-content: center;
+}
