@@ -35,6 +35,12 @@
                         echo "<td>" . $row['type'] . "</td>";
                         echo "</tr>";
                     }
+                    $saldo = $data['masuk'] - $data['keluar'];
+                    echo "<tr>";
+                    echo "<td colspan=3>Total Saldo</td>";
+                    echo "<td>" . $saldo . "</td>";
+                    echo "</tr>";
+
                 ?>
               </tbody>
         </table>
