@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 
 app.get('/data', (req, res) => {
-  const query = 'SELECT * FROM data';
+  const query = 'SELECT *, (SELECT SUM(value) FROM data WHERE type = "in") AS masuk, (SELECT SUM(value) FROM data WHERE type = "out") AS keluar FROM data';
   connection.query(query, (err, results) => {
     if (err) {
       console.error('Error fetching data from database:', err);
