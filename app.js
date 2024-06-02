@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const connection = require('./db');
+// const connection = require('./db');
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 6000;
 
 app.get('/', (req, res) => {
   res.send('coba');
