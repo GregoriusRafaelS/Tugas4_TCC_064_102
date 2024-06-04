@@ -1,4 +1,3 @@
-
 <?php
 if (isset($_GET['id'])) {
     // Dapatkan nilai 'id' dari parameter URL
