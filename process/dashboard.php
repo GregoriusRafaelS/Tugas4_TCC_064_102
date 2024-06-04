@@ -24,9 +24,8 @@ if (!isset($_SESSION['email'])) {
         <div class="d-flex justify-content-between">
             <a href="tambahCatatan.php"><button type="button" class="btn btn-success">Tambah Catatan</button></a>
 
-            <button type="button" class="btn btn-danger">Danger</button>
+            <a href="logout.php"><button type="button" class="btn btn-danger">Logout</button></a>
         </div>
-        <a href="tambahCatatan.php"><button type="button" class="btn btn-success">Tambah Catatan</button></a>
         <table class="table">
             <thead>
                 <tr>
