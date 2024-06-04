@@ -1,4 +1,16 @@
 <?php
+session_start();
+// Mulai session
+// Periksa apakah pengguna sudah login, jika belum, arahkan ke halaman login
+if (!isset($_SESSION['email'])) {
+    header("Location: /index.html");
+
+    exit();
+}
+?>
+
+
+<?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];

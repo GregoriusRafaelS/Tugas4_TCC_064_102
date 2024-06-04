@@ -21,6 +21,11 @@ if (!isset($_SESSION['email'])) {
 <body>
     <div class="container-sm">
         <h1 class="text-center mt-3 mb-3">Catatan Keuangan</h1>
+        <div class="d-flex justify-content-between">
+            <a href="tambahCatatan.php"><button type="button" class="btn btn-success">Tambah Catatan</button></a>
+
+            <button type="button" class="btn btn-danger">Danger</button>
+        </div>
         <a href="tambahCatatan.php"><button type="button" class="btn btn-success">Tambah Catatan</button></a>
         <table class="table">
             <thead>
