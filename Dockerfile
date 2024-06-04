@@ -9,7 +9,7 @@ COPY index.html .
 COPY style.css .
 
 # Menyalin seluruh isi folder 'auth' ke dalam container
-COPY process/ /var/www/html/process/
+COPY auth/ /var/www/html/auth/
 
 # Menetapkan port yang akan digunakan oleh server Apache (biasanya port 80)
 EXPOSE 80
